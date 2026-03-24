@@ -1,0 +1,222 @@
+
+
+<html>
+<head>
+    <title>Adopt Pet | PawFind</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<style>
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.popup-card{
+background:white;
+padding:35px;
+border-radius:12px;
+text-align:center;
+width:350px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+animation:popupScale 0.3s ease;
+}
+
+.popup-card h2{
+color:#28a745;
+margin-bottom:10px;
+}
+
+.popup-card p{
+font-size:15px;
+margin-bottom:20px;
+}
+
+.popup-card button{
+background:#ff6a5c;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+}
+
+.popup-card button:hover{
+background:#ff4a3d;
+}
+
+@keyframes popupScale{
+from{
+transform:scale(0.7);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+</style>
+
+<nav>
+    <h1>PawFind 🐾</h1>
+</nav>
+
+<section>
+    <h2 class="pets-title">Pet Adoption Application 🐶🐱</h2>
+
+   
+    <form id="adoptForm">
+
+        
+        <input type="text" name="full_name" placeholder="Full Name" required>
+
+        
+        <input type="email" name="email" placeholder="Email Address" required>
+
+
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+
+
+        <input type="number" name="age" placeholder="Your Age" min="18" required>
+
+   
+        <label><b>Gender</b></label><br>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+        <br><br>
+
+      
+        <label><b>Type of Residence</b></label>
+        <select name="residence_type" required>
+            <option value="">Select</option>
+            <option>Apartment</option>
+            <option>Independent House</option>
+            <option>Farm House</option>
+        </select>
+
+
+        <label><b>Do you own your house?</b></label><br>
+        <input type="radio" name="house_owned" value="Yes" required> Yes
+        <input type="radio" name="house_owned" value="No"> No
+        <br><br>
+
+
+        <label><b>Do you have other pets?</b></label>
+        <select name="other_pets">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
+
+
+        <label><b>Experience with pets (1 = Beginner, 10 = Expert)</b></label>
+        <input type="range" name="experience_level" min="1" max="10">
+
+
+        <label><b>How many hours will the pet be alone daily?</b></label>
+        <select name="alone_hours">
+            <option>0–2 hours</option>
+            <option>3–5 hours</option>
+            <option>6–8 hours</option>
+            <option>More than 8 hours</option>
+        </select>
+
+
+        <textarea name="reason_for_adoption" rows="4"
+            placeholder="Why do you want to adopt this pet?" required></textarea>
+
+    
+        <textarea name="daily_routine" rows="3"
+            placeholder="Describe your daily routine"></textarea>
+
+
+        <textarea name="care_plan" rows="3"
+            placeholder="How will you take care of the pet?"></textarea>
+
+
+        <label><b>Can you afford veterinary care?</b></label><br>
+        <input type="radio" name="vet_support" value="Yes" required> Yes
+        <input type="radio" name="vet_support" value="No"> No
+        <br><br>
+
+        
+        <input type="hidden" name="pet_id" value="1">
+
+        <button type="submit">🐾 Submit Adoption Request</button>
+
+    </form>
+</section>
+
+<footer>
+    © 2026 PawFind | Giving Pets a Forever Home 🐾
+</footer>
+<script>
+
+const form = document.getElementById("adoptForm");
+
+form.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const formData = new FormData(form);
+const data = Object.fromEntries(formData.entries());
+
+try{
+
+const response = await fetch("http://localhost:3000/adopt",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify(data)
+});
+
+const result = await response.text();
+
+showPopup("Adoption request submitted successfully 🐾");
+
+form.reset();
+
+}catch(error){
+
+showPopup("Something went wrong. Please try again.");
+
+}
+
+});
+
+
+function showPopup(message){
+
+document.getElementById("popupMessage").innerText = message;
+document.getElementById("successPopup").style.display = "flex";
+
+}
+
+function closePopup(){
+
+document.getElementById("successPopup").style.display = "none";
+
+}
+
+</script>
+<div id="successPopup" class="popup">
+  <div class="popup-card">
+      <h2>🎉 Success!</h2>
+      <p id="popupMessage">Your request has been submitted successfully.</p>
+      <button onclick="closePopup()">OK</button>
+  </div>
+</div>
+</body>
+
+</html>
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Pets | PawFind</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h1>PawFind 🐾</h1>
+    <ul>
+        <li><a href="pets.html">Pets</a></li>
+    </ul>
+</nav>
+
+<section>
+<h2 class="pets-title">Meet Our Lovely Pets 💖</h2>
+
+<div class="card-container">
+
+<div class="pet-card">
+<a href="oreo.html"><img src="oreo.jpg"></a>
+<div class="card-content">
+<div class="pet-name dog">Oreo</div>
+<div class="pet-info">Golden Retriever </div>
+<a class="pet-btn" href="oreo.html">View Details</a>
+</div>
+</div>
+
+<div class="pet-card">
+<a href="church.html"><img src="church.jpg"></a>
+<div class="card-content">
+<div class="pet-name cat">Church</div>
+<div class="pet-info">Persian Cat </div>
+<a class="pet-btn" href="church.html">View Details</a>
+</div>
+</div>
+
+<div class="pet-card">
+<a href="shelly.html"><img src="shelly.jpg"></a>
+<div class="card-content">
+<div class="pet-name dog">Shelly</div>
+<div class="pet-info">Shitzu </div>
+<a class="pet-btn" href="shelly.html">View Details</a>
+</div>
+</div>
+
+<div class="pet-card">
+<a href="ricky.html"><img src="ricky.jpg"></a>
+<div class="card-content">
+<div class="pet-name cat">Ricky</div>
+<div class="pet-info">Labrador </div>
+<a class="pet-btn" href="ricky.html">View Details</a>
+</div>
+</div>
+
+<div class="pet-card">
+<a href="jimmy.html"><img src="jimmy.jpg"></a>
+<div class="card-content">
+<div class="pet-name dog">Jimmy</div>
+<div class="pet-info">German Shepherd </div>
+<a class="pet-btn" href="jimmy.html">View Details</a>
+</div>
+</div>
+
+<div class="pet-card">
+<a href="teddy.html"><img src="teddy.jpg"></a>
+<div class="card-content">
+<div class="pet-name dog">Teddy</div>
+<div class="pet-info">Poodle </div>
+<a class="pet-btn" href="teddy.html">View Details</a>
+</div>
+</div>
+
+<div class="pet-card">
+<a href="snow.html"><img src="snow.jpg"></a>
+<div class="card-content">
+<div class="pet-name cat">Snow</div>
+<div class="pet-info">Husky </div>
+<a class="pet-btn" href="snow.html">View Details</a>
+</div>
+</div>
+
+<div class="pet-card">
+<a href="max.html"><img src="max.jpg"></a>
+<div class="card-content">
+<div class="pet-name cat">Leo</div>
+<div class="pet-info">Golden Retriever</div>
+<a class="pet-btn" href="max.html">View Details</a>
+</div>
+</div>
+
+<div class="pet-card">
+<a href="cheeku.html"><img src="cheeku.jpg"></a>
+<div class="card-content">
+<div class="pet-name dog">Cheeku</div>
+<div class="pet-info">Chow-chow</div>
+<a class="pet-btn" href="cheeku.html">View Details</a>
+</div>
+</div>
+
+<div class="pet-card">
+<a href="cinnamon.html"><img src="cinnamon.jpg"></a>
+<div class="card-content">
+<div class="pet-name other">Cinnamon</div>
+<div class="pet-info">Ginger cat</div>
+<a class="pet-btn" href="cinnamon.html">View Details</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>© 2026 PawFind</footer>
+<script>
+
+async function updatePetStatus(){
+
+const response = await fetch("http://localhost:3000/pets");
+const pets = await response.json();
+
+pets.forEach(pet => {
+
+const button = document.querySelector(`[data-pet="${pet.pet_id}"]`);
+
+if(button && pet.status === "Adopted"){
+
+button.innerText = "Adopted";
+button.style.background = "#888";
+button.style.cursor = "not-allowed";
+button.disabled = true;
+
+}
+
+});
+
+}
+
+updatePetStatus();
+
+</script>
+</body>
+</html>

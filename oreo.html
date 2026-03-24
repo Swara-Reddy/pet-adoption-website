@@ -1,0 +1,59 @@
+
+<html>
+<head>
+    <title>Oreo | Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav><h1>PawFind 🐾</h1></nav>
+
+<section>
+<h2 class="pets-title">Meet Oreo</h2>
+
+<div class="pet-card" style="max-width:700px;margin:auto;">
+<img src="oreo.jpg"
+     style="height:300px;object-fit:contain;padding:20px;">
+
+<div class="card-content">
+<p><b>Breed:</b> Golden Retriever</p>
+<p><b>Age:</b> 2 Years</p>
+<p><b>Gender:</b> Male</p>
+<p><b>Vaccination:</b> Fully Vaccinated</p>
+<p><b>Temperament:</b> Friendly & playful</p>
+<p><b>Description:</b> Loves walks and cuddles.</p>
+<a class="pet-btn" href="adopt.html?pet_id=1">Adopt Oreo ❤️</a>
+</div>
+</div>
+</section>
+
+<footer>© PawFind</footer>
+<script>
+
+async function checkPetStatus(){
+
+const response = await fetch("http://localhost:3000/pets");
+const pets = await response.json();
+
+const petId = 1;   // Oreo's pet_id in database
+
+const pet = pets.find(p => p.pet_id === petId);
+
+const button = document.getElementById("adoptBtn");
+
+if(pet && pet.status === "Adopted"){
+
+button.innerText = "Adopted";
+button.style.background = "#888";
+button.style.cursor = "not-allowed";
+button.removeAttribute("href");
+
+}
+
+}
+
+checkPetStatus();
+
+</script>
+</body>
+</html>
