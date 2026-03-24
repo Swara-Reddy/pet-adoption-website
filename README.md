@@ -1,28 +1,28 @@
-# pet-adoption-website# 🐾 PawFind – Pet Adoption Web Application
+# pet-adoption-website# -PawFind – Pet Adoption Web Application
 
-## 📌 Project Overview
+##  Project Overview
 
 **PawFind** is a full-stack web application designed to simplify the pet adoption process by connecting users with shelters. The platform allows users to explore available pets, submit adoption applications, and track the adoption process through a structured database system.
 
 ---
 
-## 🎯 Features
+##  Features
 
-### 🐶 User Features
+###  User Features
 
 * View available pets with images and details
 * Register and login
 * Submit adoption application forms
 * Provide detailed adoption preferences
 
-### 🏠 Adoption Process
+###  Adoption Process
 
 * Adoption application stored in database
 * Home visit inspection system
 * Approval/rejection workflow
 * Adoption history tracking
 
-### 🗄️ Database Features
+###  Database Features
 
 * Fully normalized relational database
 
@@ -44,7 +44,7 @@
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 ### Frontend
 
@@ -63,7 +63,7 @@
 
 ---
 
-## 🧩 System Architecture
+##  System Architecture
 
 ```
 Frontend (HTML/CSS/JS)
@@ -75,7 +75,7 @@ MySQL Database
 
 ---
 
-## 🗃️ Database Design
+## Database Design
 
 Key relationships:
 
@@ -86,20 +86,20 @@ Key relationships:
 
 ---
 
-## 🚀 How to Run the Project
+##  How to Run the Project
 
-### 1️⃣ Start XAMPP
+###  Start XAMPP
 
 * Start Apache
 * Start MySQL
 
-### 2️⃣ Setup Database
+###  Setup Database
 
 * Open phpMyAdmin
 * Create database: `pet_adoption_db`
 * Run SQL scripts (tables + insert data)
 
-### 3️⃣ Run Backend
+###  Run Backend
 
 ```bash
 cd backend
@@ -107,7 +107,7 @@ npm install
 node server.js
 ```
 
-### 4️⃣ Open Frontend
+###  Open Frontend
 
 Open in browser:
 
@@ -117,7 +117,7 @@ Open in browser:
 
 ---
 
-## 📊 Sample Workflow
+## Sample Workflow
 
 1. User registers
 2. User selects a pet
@@ -129,7 +129,7 @@ Open in browser:
 
 ---
 
-## 🔐 Future Enhancements
+## Future Enhancements
 
 * Authentication system (JWT)
 * Admin dashboard
@@ -138,12 +138,12 @@ Open in browser:
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 **Swara Reddy**
 
 ---
 
-## 📌 Conclusion
+##  Conclusion
 
 This project demonstrates the practical implementation of **DBMS concepts**, **frontend-backend integration**, and **real-world application design** for managing pet adoption workflows.
