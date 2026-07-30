@@ -1,4 +1,4 @@
-# pet-adoption-website# -PawFind – Pet Adoption Web Application
+## pet-adoption-website -PawFind – Pet Adoption Web Application
 
 ##  Project Overview
 
