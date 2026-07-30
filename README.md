@@ -17,10 +17,9 @@
 * Submit adoption application forms
 * Provide detailed adoption preferences
 
-
-![Pet Details Page](petdetails.png)
 ![Pets Page](petspage1.png)
 ![Pets Page](petspage2.png) 
+![Pet Details Page](petdetails.png)
 
 ###  Adoption Process
 
@@ -35,7 +34,7 @@
 
 ###  Database Features
 
-![Database Page](storeddatabase.png)
+![Database Page](storeddatabse.png)
 
 * Fully normalized relational database
 
