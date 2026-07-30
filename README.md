@@ -4,6 +4,8 @@
 
 **PawFind** is a full-stack web application designed to simplify the pet adoption process by connecting users with shelters. The platform allows users to explore available pets, submit adoption applications, and track the adoption process through a structured database system.
 
+![Home Page](home.png)
+
 ---
 
 ##  Features
