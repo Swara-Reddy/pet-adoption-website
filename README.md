@@ -17,6 +17,11 @@
 * Submit adoption application forms
 * Provide detailed adoption preferences
 
+
+![Pet Details Page](petdetails.png)
+![Pets Page](petspage1.png)
+![Pets Page](petspage2.png) 
+
 ###  Adoption Process
 
 * Adoption application stored in database
@@ -24,7 +29,13 @@
 * Approval/rejection workflow
 * Adoption history tracking
 
+![Application Page](application.png)
+![Adoption Page](adoptionapplication.png)
+
+
 ###  Database Features
+
+![Database Page](storeddatabase.png)
 
 * Fully normalized relational database
 
