@@ -128,6 +128,30 @@ Open in browser:
 * `adopt.html`
 
 ---
+## 🚀 Getting Started
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/Swara-Reddy/pet-adoption-website.git
+```
+
+### Navigate to the Project
+
+```bash
+cd pet-adoption-website
+```
+
+### Run the Project
+
+1. Place the project folder inside the `htdocs` directory of XAMPP.
+2. Start **Apache** and **MySQL** from the XAMPP Control Panel.
+3. Import the provided SQL file into phpMyAdmin.
+4. Open the project in your browser:
+
+```text
+http://localhost/pet-adoption-website
+```
 
 ## Sample Workflow
 
